@@ -13,7 +13,7 @@ public class Timer_Level3 : MonoBehaviour
     void Start()
     {
         AnimateBar();
-        StartCoroutine(ShowImagesEvery6Seconds());
+        StartCoroutine(ShowImagesEvery3Seconds());
     }
 
     public void AnimateBar()
@@ -26,13 +26,13 @@ public class Timer_Level3 : MonoBehaviour
         // Actions to perform when the timer completes
     }
 
-    IEnumerator ShowImagesEvery6Seconds()
+    IEnumerator ShowImagesEvery3Seconds()
     {
         int index = 0;
 
         while (true)
         {
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(3);
 
             if (index < images.Count)
             {
