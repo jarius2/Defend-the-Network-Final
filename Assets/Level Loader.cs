@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    //Level 1
+    
     public void Level1()
     {
         SceneManager.LoadSceneAsync("Level 1.1");
@@ -19,5 +19,10 @@ public class LevelLoader : MonoBehaviour
     public void Level3()
     {
         SceneManager.LoadSceneAsync("Level 3.1");
+    }
+
+      public void Level4()
+    {
+        SceneManager.LoadSceneAsync("Level 4.1");
     }
 }
