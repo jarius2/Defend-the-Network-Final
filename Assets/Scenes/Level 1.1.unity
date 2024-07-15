@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2253471, b: 0.2253471, a: 0}
+  m_Color: {r: 1, g: 0.88235295, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2885,7 +2885,7 @@ MonoBehaviour:
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -2934,7 +2934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: 872}
+  m_AnchoredPosition: {x: -3, y: 646}
   m_SizeDelta: {x: 1885.3728, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293205316
@@ -3538,6 +3538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1567825245}
+  - component: {fileID: 1567825246}
   m_Layer: 0
   m_Name: Level Success
   m_TagString: Untagged
@@ -3564,6 +3565,20 @@ Transform:
   - {fileID: 769829651}
   m_Father: {fileID: 1314468406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567825246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567825244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22230154a0d9f141909dbe4d8c51a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Success: {fileID: 1567825244}
+  levelButtons: []
 --- !u!1 &1585513592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3784,7 @@ GameObject:
   - component: {fileID: 1622946910}
   - component: {fileID: 1622946913}
   - component: {fileID: 1622946915}
+  - component: {fileID: 1622946916}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3875,6 +3891,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d6e709d671fdc4bafbb9aa0e8bf8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1622946916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622946909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22230154a0d9f141909dbe4d8c51a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Success: {fileID: 1567825244}
+  levelButtons: []
 --- !u!1 &1666563793
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,7 +3977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 3.8979492, y: 872}
+  m_AnchoredPosition: {x: 17.89795, y: 646}
   m_SizeDelta: {x: 1878.2041, y: 90}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1710330059
@@ -4287,7 +4317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21698111, g: 0.05424528, b: 0.05424528, a: 0}
+  m_Color: {r: 1, g: 0.88235295, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4297,7 +4327,7 @@ MonoBehaviour:
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -4735,6 +4765,6 @@ SceneRoots:
   - {fileID: 1229000782}
   - {fileID: 1349529306}
   - {fileID: 153563197}
-  - {fileID: 1484454569}
   - {fileID: 135532707}
+  - {fileID: 1484454569}
   - {fileID: 1314468406}

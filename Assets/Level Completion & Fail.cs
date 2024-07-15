@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class LevelCompletion : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class LevelCompletion : MonoBehaviour
     public void Level1Done()
     {
         SceneManager.LoadSceneAsync("Level 2");
+        UnlockNewLevel();
     }
     public void Level1Restart()
     {
@@ -24,6 +27,7 @@ public class LevelCompletion : MonoBehaviour
     public void Level2Done()
     {
         SceneManager.LoadSceneAsync("Level 3");
+        UnlockNewLevel();
     }
     public void Level2Restart()
     {
@@ -34,9 +38,32 @@ public class LevelCompletion : MonoBehaviour
     public void Level3Done()
     {
         SceneManager.LoadSceneAsync("Level 4");
+        UnlockNewLevel();
     }
     public void Level3Restart()
     {
         SceneManager.LoadSceneAsync("Level 3");
+    }
+
+    //Level 4
+    public void Level4Done()
+    {
+        SceneManager.LoadSceneAsync("Level 5");
+        UnlockNewLevel();
+    }
+
+    public void Level4Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 4");
+    }
+    
+    void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1 ) + 1);
+            PlayerPrefs.Save();
+        }
     }
 }

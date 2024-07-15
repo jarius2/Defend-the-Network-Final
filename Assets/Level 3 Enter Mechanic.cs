@@ -37,7 +37,11 @@ public class Level3EnterMechancis : MonoBehaviour
         }
         else
         {
+<<<<<<< HEAD
             Debug.Log("Wrong Answer.");
+=======
+            Debug.Log("Wrong answer.");
+>>>>>>> parent of 7b5a6f8 (Revert "Level 5 improvements")
         }
     }
 
