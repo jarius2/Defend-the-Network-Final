@@ -37,7 +37,7 @@ public class Level3EnterMechancis : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wrong answer.");
+            Debug.Log("Incorrect answer.");
         }
     }
 
