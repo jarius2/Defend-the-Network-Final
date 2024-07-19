@@ -150,9 +150,9 @@ public class Level4 : MonoBehaviour
         currentTextIndex = 1;
 
         // Clear the text fields
-        Text1.text = "........";
-        Text2.text = "........";
-        Text3.text = "........";
+        Text1.text = "1........";
+        Text2.text = "2........";
+        Text3.text = "3........";
 
         // Show all the buttons again
         IntegrityButton.gameObject.SetActive(true);

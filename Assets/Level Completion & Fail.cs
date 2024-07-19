@@ -56,7 +56,17 @@ public class LevelCompletion : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Level 4");
     }
-    
+
+    public void Level5Done()
+        {
+            SceneManager.LoadSceneAsync("Level 6");
+            UnlockNewLevel();
+        }
+
+    public void Level5Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 5");
+    }
     void UnlockNewLevel()
     {
         if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
