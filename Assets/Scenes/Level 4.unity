@@ -787,8 +787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EQUIP THE LAPTOP WITH ANTIVIRUS SOFTWARE AND ESTABLISH PREVENTIVE MEASURES
-    TO PROTECT AGAINS POTENTIAL ADWARE INTRUSIONS
+  m_text: PLACE THE CORRECT WORD IN ITS CORRESPONDING PLACE TO COMPLETE THE TRIAD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6156bc70f69b4b946a3c18abc67ac676, type: 2}
   m_sharedMaterial: {fileID: -841573961108728665, guid: 6156bc70f69b4b946a3c18abc67ac676, type: 2}
