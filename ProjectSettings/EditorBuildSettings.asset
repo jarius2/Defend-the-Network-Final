@@ -69,6 +69,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 5.1.unity
     guid: cfee6de1d6da1474d9a4de1441b5e024
   - enabled: 1
+    path: Assets/Scenes/Level 6.1.unity
+    guid: 4cfbfd3124f20a74abc0a417b2e53f6b
+  - enabled: 1
     path: Assets/Scenes/Notebook.unity
     guid: 3975d0933aefb124da86522cb18afce2
   m_configObjects: {}
