@@ -107,7 +107,6 @@ public class Level4 : MonoBehaviour
         if (attemptCount >= maxAttempts)
         {
             Debug.Log("You have exceeded the maximum number of attempts. You have failed");
-            Failed.gameObject.SetActive(true);
             Game.gameObject.SetActive(false);
         }
 
