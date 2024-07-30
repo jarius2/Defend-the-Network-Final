@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     
-    public void Level1()
+    
+        public void Level1()
     {
         SceneManager.LoadSceneAsync("Level 1.1");
     }
