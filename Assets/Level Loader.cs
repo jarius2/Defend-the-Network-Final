@@ -31,8 +31,30 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadSceneAsync("Level 5.1");
     }
 
-     public void Level6()
+    public void Level6()
     {
         SceneManager.LoadSceneAsync("Level 6.1");
     }
+
+    public void Level7()
+    {
+        SceneManager.LoadSceneAsync("Level 7.1");
+    }
+
+    public void Level8()
+    {
+        SceneManager.LoadSceneAsync("Level 8.1");
+    }
+
+    public void Level9()
+    {
+        SceneManager.LoadSceneAsync("Level 9.1");
+    }
+
+    public void Level10()
+    {
+        SceneManager.LoadSceneAsync("Level 10.1");
+    }
+
+
 }
