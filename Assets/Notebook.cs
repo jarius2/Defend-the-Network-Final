@@ -7,7 +7,7 @@ public class Notebook : MonoBehaviour
 {
     public void BackMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync("Main Menu");
     }
 
 }
