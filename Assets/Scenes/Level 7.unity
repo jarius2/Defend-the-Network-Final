@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 335397827}
   - component: {fileID: 335397826}
   - component: {fileID: 335397825}
+  - component: {fileID: 335397828}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -570,6 +571,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335397828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335397824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144bf6834ee8a14ca02802b54d1c2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362843869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1217,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DECRYPT THE "ASCII CODE" TO REVEAL THE HIDDEN MESSAGE SENT BY THE COMPANY
+  m_text: YOUR TEAM LEADER SENT AN EMAIL WITH AN ENCRYPTED MESSAGE. DECODE THE MESSAGE
+    USING COLUMNAR TRANSPOSITION CIPHER.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6156bc70f69b4b946a3c18abc67ac676, type: 2}
   m_sharedMaterial: {fileID: -841573961108728665, guid: 6156bc70f69b4b946a3c18abc67ac676, type: 2}
@@ -1617,9 +1631,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 335397828}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: Level6
+        m_MethodName: Level7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

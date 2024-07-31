@@ -58,15 +58,78 @@ public class LevelCompletion : MonoBehaviour
     }
 
     public void Level5Done()
-        {
-            SceneManager.LoadSceneAsync("Level 6");
-            UnlockNewLevel();
-        }
+    {
+        SceneManager.LoadSceneAsync("Level 6");
+        UnlockNewLevel();
+     }
 
     public void Level5Restart()
     {
         SceneManager.LoadSceneAsync("Level 5");
     }
+
+    public void Level6Done()
+    {
+        SceneManager.LoadSceneAsync("Level 7");
+        UnlockNewLevel();
+    }
+
+    public void level6Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 6");
+    }
+
+    public void Level7Done()
+    {
+        SceneManager.LoadSceneAsync("Level 8");
+        UnlockNewLevel();
+    }
+
+    public void level7Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 7");
+    }
+
+    public void Level8Done()
+    {
+        SceneManager.LoadSceneAsync("Level 9");
+        UnlockNewLevel();
+    }
+
+    public void level8Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 8");
+    }
+
+    public void Level9Done()
+    {
+        SceneManager.LoadSceneAsync("Level 10");
+        UnlockNewLevel();
+    }
+
+    public void level9Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 9");
+    }
+
+    public void Level10Done()
+    {
+        SceneManager.LoadSceneAsync("Level 11");
+        UnlockNewLevel();
+    }
+
+    public void level10Restart()
+    {
+        SceneManager.LoadSceneAsync("Level 10");
+    }
+
+
+
+
+
+
+
+
     void UnlockNewLevel()
     {
         if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
