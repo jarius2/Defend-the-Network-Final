@@ -6,125 +6,123 @@ using UnityEngine.EventSystems;
 
 public class Level9 : MonoBehaviour
 {
-    public GameObject Correct1;
-    public GameObject Correct2;
-    public GameObject Correct3;
-    public GameObject Wrong1;
-    public GameObject Wrong2;
-    public GameObject Wrong3;
-    public GameObject Wrong4;
-    public GameObject Submit;
-    public GameObject Winnerscreen;
+  public Button[] correctButtons;
+    public Button[] wrongButtons;
+    public Button submitButton;
+    public GameObject winnerScreen;
     public GameObject Remove;
-    public GameObject Remove2;
+    public GameObject Remove1;
 
-    private Button[] correctButtons;
-    private Button[] wrongButtons;
-    private Button submitButton;
+    private bool[] correctButtonStates;
+    private bool anyWrongButtonPressed = false;
+
     private Color originalColor;
-    private int correctButtonCount = 0;
-    private bool hasAnyWrongButtonBeenPressed = false; // Track if any wrong button has been pressed
-    private const int requiredCorrectCount = 3;
+    private Color correctColor = Color.green;
+    private Color wrongColor = Color.red;
+    private Color pressedColor = Color.yellow;
 
     void Start()
     {
-        // Initialize buttons
-        correctButtons = new Button[]
-        {
-            Correct1.GetComponent<Button>(),
-            Correct2.GetComponent<Button>(),
-            Correct3.GetComponent<Button>(),
-        };
+        correctButtonStates = new bool[correctButtons.Length];
+        ResetButtons();
 
-        wrongButtons = new Button[]
-        {
-            Wrong1.GetComponent<Button>(),
-            Wrong2.GetComponent<Button>(),
-            Wrong3.GetComponent<Button>(),
-            Wrong4.GetComponent<Button>(),
-        };
-
-        submitButton = Submit.GetComponent<Button>();
-        originalColor = correctButtons[0].image.color; // Assuming all buttons have the same original color
-
-        // Add listeners for correct buttons
         foreach (var button in correctButtons)
         {
-            button.onClick.AddListener(() => OnButtonPress(true));
+            button.onClick.AddListener(() => CorrectButtonPressed(button));
         }
 
-        // Add listeners for wrong buttons
         foreach (var button in wrongButtons)
         {
-            button.onClick.AddListener(() => OnWrongButtonPress());
+            button.onClick.AddListener(() => WrongButtonPressed(button));
         }
 
-        submitButton.onClick.AddListener(OnSubmitPress);
-        submitButton.interactable = true; // Enable the Submit button regardless of button selections
-    }
+        submitButton.onClick.AddListener(SubmitButtonPressed);
 
-    void OnButtonPress(bool isCorrect)
-    {
-        // Change the color of the selected button
-        Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-        button.image.color = isCorrect ? Color.green : Color.red;
-
-        // Update button state
-        if (isCorrect)
+        if (correctButtons.Length > 0)
         {
-            correctButtonCount++;
+            originalColor = correctButtons[0].colors.normalColor;
         }
     }
 
-    void OnWrongButtonPress()
+    void CorrectButtonPressed(Button button)
     {
-        // Change the color of the wrong button
-        Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-        button.image.color = Color.red;
-
-        // Update flag for wrong button pressed
-        hasAnyWrongButtonBeenPressed = true;
+        int index = System.Array.IndexOf(correctButtons, button);
+        if (index >= 0)
+        {
+            correctButtonStates[index] = true;
+            SetButtonColor(button, pressedColor);
+        }
     }
 
-    void OnSubmitPress()
+    void WrongButtonPressed(Button button)
     {
-        if (hasAnyWrongButtonBeenPressed)
+        anyWrongButtonPressed = true;
+        SetButtonColor(button, pressedColor);
+    }
+
+    void SubmitButtonPressed()
+    {
+        if (anyWrongButtonPressed)
         {
-            // Reset button colors if any wrong button was pressed
-            ResetButtonColors();
-            correctButtonCount = 0; // Reset correct button count
+            anyWrongButtonPressed = false;
+            ResetButtons();
+            return;
         }
-        else if (correctButtonCount == requiredCorrectCount)
+
+        if (AllCorrectButtonsPressed())
         {
-            Winnerscreen.SetActive(true);
+            foreach (var button in correctButtons)
+            {
+                SetButtonColor(button, correctColor);
+            }
+            winnerScreen.SetActive(true);
             Remove.SetActive(false);
-            Remove2.SetActive(false);
+            Remove1.SetActive(false);
         }
         else
         {
-            ResetButtonColors();
-            correctButtonCount = 0; // Reset correct button count
+            ResetButtons();
         }
-
-        // Disable the Submit button after submitting
-        submitButton.interactable = false;
     }
 
-    void ResetButtonColors()
+    bool AllCorrectButtonsPressed()
     {
-        // Reset colors for correct buttons
+        foreach (bool state in correctButtonStates)
+        {
+            if (!state)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    void ResetButtons()
+    {
+        for (int i = 0; i < correctButtonStates.Length; i++)
+        {
+            correctButtonStates[i] = false;
+        }
+        anyWrongButtonPressed = false;
+
         foreach (var button in correctButtons)
         {
-            button.image.color = originalColor;
+            SetButtonColor(button, originalColor);
         }
 
-        // Reset colors for wrong buttons
         foreach (var button in wrongButtons)
         {
-            button.image.color = originalColor;
+            SetButtonColor(button, originalColor);
         }
+    }
 
-        // Reset flags
-        hasAnyWrongButtonBeenPressed = false;
+    void SetButtonColor(Button button, Color color)
+    {
+        ColorBlock cb = button.colors;
+        cb.normalColor = color;
+        cb.selectedColor = color;
+        cb.highlightedColor = color;
+        cb.pressedColor = color;
+        button.colors = cb;
     }
 }
