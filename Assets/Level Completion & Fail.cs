@@ -11,6 +11,11 @@ public class LevelCompletion : MonoBehaviour
    {
      SceneManager.LoadSceneAsync("Main Menu");
    }
+
+   public void posttest()
+   {
+     SceneManager.LoadSceneAsync("Post test");
+   }
     
     //Level 1
     public void Level1Done()
