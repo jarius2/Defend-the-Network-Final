@@ -108,6 +108,8 @@ public class Level4 : MonoBehaviour
         {
             Debug.Log("You have exceeded the maximum number of attempts. You have failed");
             Game.gameObject.SetActive(false);
+            Failed.gameObject.SetActive(true);
+            RemoveTimer.gameObject.SetActive(false);
         }
 
         attemptCount++; 
