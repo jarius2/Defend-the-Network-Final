@@ -22,6 +22,15 @@ public class Posttestwrite : MonoBehaviour
     public void Send()
     {
         StartCoroutine(Post(Question1.text));
+        StartCoroutine(Post(Question2.text));
+        StartCoroutine(Post(Question3.text));
+        StartCoroutine(Post(Question4.text));
+        StartCoroutine(Post(Question5.text));
+        StartCoroutine(Post(Question6.text));
+        StartCoroutine(Post(Question7.text));
+        StartCoroutine(Post(Question8.text));
+        StartCoroutine(Post(Question9.text));
+        StartCoroutine(Post(Question10.text));
     }
 
     IEnumerator Post(string s1)
