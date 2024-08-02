@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 1f5cdd10145d96f41b84217b59c3d2b1, type: 2}
+  m_Texture: {fileID: 8400000, guid: 0cc02963283ea1e44b0dfb977d15ba6d, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -365,6 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1826271422}
   - component: {fileID: 1826271421}
+  - component: {fileID: 1826271423}
   m_Layer: 0
   m_Name: Video Player
   m_TagString: Untagged
@@ -384,7 +385,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 1f5cdd10145d96f41b84217b59c3d2b1, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 0cc02963283ea1e44b0dfb977d15ba6d, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -423,6 +424,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826271423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826271420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c992d3a23280d499af23955b63a930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoFileName: LEVEL 2 - VID.mp4
 --- !u!1 &1867590487
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 834.9358, y: 458.82056}
+  m_AnchoredPosition: {x: 820, y: 440}
   m_SizeDelta: {x: 190.6783, y: 120.6407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951842302
