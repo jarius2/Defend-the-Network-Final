@@ -23,31 +23,22 @@ public class PretestWrite : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(Question1.text));
-        StartCoroutine(Post(Question2.text));
-        StartCoroutine(Post(Question3.text));
-        StartCoroutine(Post(Question4.text));
-        StartCoroutine(Post(Question5.text));
-        StartCoroutine(Post(Question6.text));
-        StartCoroutine(Post(Question7.text));
-        StartCoroutine(Post(Question8.text));
-        StartCoroutine(Post(Question9.text));
-        StartCoroutine(Post(Question10.text));
+        StartCoroutine(Post(Question1.text,Question2.text,Question3.text,Question4.text,Question5.text,Question6.text,Question7.text,Question8.text,Question9.text,Question10.text));
     }
 
-    IEnumerator Post(string s1)
+    IEnumerator Post(string s1, string s2, string s3, string s4, string s5, string s6, string s7, string s8, string s9, string s10)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.1958166543", s1);
-        form.AddField("entry.2144430512", s1);
-        form.AddField("entry.2002522859", s1);
-        form.AddField("entry.985707723", s1);
-        form.AddField("entry.815792001", s1);
-        form.AddField("entry.2115540110",s1);
-        form.AddField("entry.1474042793", s1);
-        form.AddField("entry.896265687", s1);
-        form.AddField("entry.85727533", s1);
-        form.AddField("entry.425767890", s1);
+        form.AddField("entry.2144430512", s2);
+        form.AddField("entry.2002522859", s3);
+        form.AddField("entry.985707723", s4);
+        form.AddField("entry.815792001", s5);
+        form.AddField("entry.2115540110",s6);
+        form.AddField("entry.1474042793", s7);
+        form.AddField("entry.896265687", s8);
+        form.AddField("entry.85727533", s9);
+        form.AddField("entry.425767890", s10);
 
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
 
